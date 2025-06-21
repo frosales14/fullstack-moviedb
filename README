@@ -58,3 +58,9 @@ If you don't have Docker, follow the instructions below.
      `npm run start`
 7. Hit the endpoint `localhost:3000/api/seed/run` (GET Method) to insert the data in the database.
 8. Open your favorite browser at `localhost:3001`.
+
+> ** the db user is 
+{
+   "email": "admin@gmail.com",
+   "password": "123456"
+}
