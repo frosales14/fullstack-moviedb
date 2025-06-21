@@ -1,0 +1,60 @@
+# Steps to run the project
+
+> **Important:** You need to have [Docker](https://www.docker.com/get-started) installed on your machine before running this project.
+
+## Table of Contents
+
+- [Environment Variables](#environment-variables)
+- [Instructions with Docker](#instructions-with-docker)
+- [Instructions Without Docker](#instructions-without-docker)
+
+
+## Environment Variables
+
+| Variable            | Example Value             | Description                                 |
+|---------------------|--------------------------|---------------------------------------------|
+| DB_PASSWORD         | MySecretPassword@12      | Password for the PostgreSQL database        |
+| DB_NAME             | MoviesDB                 | Name of the PostgreSQL database             |
+| DB_HOST             | moviesdb                 | Hostname for the database (use `moviesdb` for Docker) |
+| DB_PORT             | 5432                     | Port for the PostgreSQL database            |
+| JWT_SECRET          | secre3tk3y$$$            | Secret key for JWT authentication           |
+| PORT                | 3001                     | Port for the frontend server                |
+| NODE_ENV            | DEV                      | Node environment (e.g., DEV, PROD)          |
+| DB_USERNAME         | postgres                 | Username for the PostgreSQL database        |
+| FRONTEND_PORT       | 3000                     | Port for the backend server                 |
+
+> You can copy `.env.template` to `.env` and adjust these values as needed.
+
+## Instructions with docker
+1. run docker-compose up -d
+2. Hit the endpoint localhost:3000/api/seed/run (GET Methond) to insert the data in the dB
+3. open your favorite browser in localhost:3001
+
+If you don't have Docker, follow the instructions below.
+## Instructions Without Docker
+
+1. Make sure you have Node.js (v18 or above) and PostgreSQL installed on your machine.
+2. Clone this repository and navigate to the project root.
+3. Set up your environment variables. You can copy `.env.example` to `.env` and fill in the required values for both backend and frontend.
+4. **Start the database:**
+   - Create a PostgreSQL database using the credentials from your `.env` file.
+5. **Start the backend:**
+   - Navigate to the `backend` directory:  
+     `cd backend`
+   - Install dependencies:  
+     `npm install`
+   - Build the backend:  
+     `npm run build`
+   - Start the backend server:  
+     `npm run start`
+6. **Start the frontend:**
+   - Open a new terminal and navigate to the `frontend` directory:  
+     `cd frontend`
+   - Install dependencies:  
+     `npm install`
+   - Build the frontend:  
+     `npm run build`
+   - Start the frontend server:  
+     `npm run start`
+7. Hit the endpoint `localhost:3000/api/seed/run` (GET Method) to insert the data in the database.
+8. Open your favorite browser at `localhost:3001`.

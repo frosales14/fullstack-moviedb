@@ -1,0 +1,36 @@
+name: Node
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout 🛬'
+        
+        uses: actions/checkout@v4
+      
+      - name: 'Setup Node ⚙️'
+
+        uses: actions/setup-node@v4
+        
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 'Install dependencies 📦'
+        run: npm ci
+
+      - name: 'Build 🚀'
+        run: npm run build && find dist/main.js
+
+      - name: 'Run lint 💅🏻'
+        run: npm run lint
+
+      - name: 'Run tests 🧪'
+        run: npm run test
+
+
+        

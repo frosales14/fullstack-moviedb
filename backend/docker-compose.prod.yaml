@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  destifyapp:
+    depends_on:
+      - moviesdb
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: destify-docker
+    container_name: destifyapp
+    restart: always 
+    ports:
+      - "${PORT}:${PORT}"
+
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USERNAME: ${DB_USERNAME}
+      PORT: ${PORT}
+      JWT_SECRET: ${JWT_SECRET}
+      NODE_ENV: ${NODE_ENV}
+
+  moviesdb:
+    image: postgres:14.3
+    container_name: moviesdb
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
