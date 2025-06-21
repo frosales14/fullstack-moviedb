@@ -2,12 +2,16 @@
 
 > **Important:** You need to have [Docker](https://www.docker.com/get-started) installed on your machine before running this project.
 
-## Table of Contents
+# Table of Contents
 
+- [Main repositories](#main-repositories)
 - [Environment Variables](#environment-variables)
 - [Instructions with Docker](#instructions-with-docker)
 - [Instructions Without Docker](#instructions-without-docker)
 
+# Main repositories
+- [Backend Repository](https://github.com/frosales14/moviedb-backend) - github actions for deployment example here
+- [Frontend Repository](https://github.com/frosales14/moviedb-frontend)
 
 ## Environment Variables
 
@@ -60,7 +64,8 @@ If you don't have Docker, follow the instructions below.
 8. Open your favorite browser at `localhost:3001`.
 
 > ** the db user is 
-{
-   "email": "admin@gmail.com",
-   "password": "123456"
-}
+> {
+>   "email": "admin@gmail.com",
+>   "password": "123456"
+> }
+
